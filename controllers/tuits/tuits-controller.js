@@ -13,9 +13,16 @@ const findTuits = async (req, res) => {
 }
 
 const createTuit = async (req, res) => {
-  const newTuit = req.body;
-  newTuit.likes = 0;
-  newTuit.liked = false;
+  const newTuit = {
+    ...req.body,
+    likes: 0,
+    liked: false,
+    dislikes: 0,
+    disliked: false,
+    retuits: 0,
+    replies: 0,
+    time: '1m'
+  };
   const insertedTuit = await tuitsDao.createTuit(newTuit);
   res.json(insertedTuit);
 }
