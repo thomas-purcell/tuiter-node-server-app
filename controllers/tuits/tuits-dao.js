@@ -1,7 +1,6 @@
 import tuitsModel from './tuits-model.js';
 export const findTuits = () => {
   const res = tuitsModel.find();
-  console.log(res);
   return res;
 }
 export const createTuit = (tuit) => tuitsModel.create(tuit);
